@@ -1,0 +1,1094 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --green: #00a875;
+    --green-dark: #00895e;
+    --green-light: #e9f8f1;
+    --dark: #17231e;
+    --muted: #85918a;
+    --border: #e9efeb;
+    --bg: #f7f9f8;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: var(--bg);
+    color: var(--dark);
+}
+
+button {
+    font-family: inherit;
+}
+
+/* DEMO BANNER */
+
+.demo-banner {
+    min-height: 33px;
+    padding: 9px 12px;
+    background: #fff2d9;
+    color: #875900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* LOGIN PAGE */
+
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 450px;
+    margin: auto;
+    padding: 35px 22px;
+}
+
+.login-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 35px;
+}
+
+.login-brand h1,
+.login-brand h2 {
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.login-brand p {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+.brand-icon {
+    width: 45px;
+    height: 45px;
+    background: var(--green);
+    color: white;
+    border-radius: 13px;
+    display: grid;
+    place-items: center;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.login-card {
+    background: white;
+    padding: 32px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: 0 12px 40px rgba(20,60,40,.04);
+}
+
+.welcome h2 {
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+.welcome p {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 30px;
+}
+
+label {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    margin: 18px 0 9px;
+}
+
+input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    outline: none;
+    font-size: 13px;
+    transition: .2s;
+}
+
+input:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(0,168,107,.08);
+}
+
+.primary-btn {
+    width: 100%;
+    padding: 15px;
+    margin-top: 23px;
+    background: var(--green);
+    color: white;
+    border: none;
+    border-radius: 9px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.primary-btn:hover {
+    background: var(--green-dark);
+}
+
+.demo-credentials {
+    background: var(--green-light);
+    padding: 15px;
+    border-radius: 9px;
+    margin-top: 25px;
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+.demo-credentials strong {
+    color: var(--green-dark);
+}
+
+.error-message {
+    color: #d83939;
+    font-size: 12px;
+    margin-top: 12px;
+}
+
+.footer-note {
+    text-align: center;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.6;
+    margin-top: 25px;
+}
+
+/* HEADER */
+
+.bank-header {
+    height: 76px;
+    background: white;
+    border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+    height: 100%;
+    max-width: 1190px;
+    padding: 0 25px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bank-logo {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    text-decoration: none;
+    color: var(--dark);
+}
+
+.logo-symbol {
+    width: 43px;
+    height: 43px;
+    background: var(--green);
+    color: white;
+    border-radius: 13px;
+    display: grid;
+    place-items: center;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.logo-text h2 {
+    font-size: 19px;
+    font-weight: 800;
+}
+
+.logo-text span {
+    display: block;
+    color: var(--muted);
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+    margin-top: 3px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 23px;
+}
+
+.header-icon {
+    position: relative;
+    background: white;
+    border: none;
+    font-size: 19px;
+    color: #59665e;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.notification-dot {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #ef665a;
+    top: 5px;
+    right: 5px;
+}
+
+.profile-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-avatar,
+.large-avatar {
+    background: #e5f6ed;
+    color: var(--green-dark);
+    display: grid;
+    place-items: center;
+    font-weight: 800;
+    border-radius: 50%;
+}
+
+.profile-avatar {
+    width: 37px;
+    height: 37px;
+    font-size: 11px;
+}
+
+.profile-info strong {
+    display: block;
+    font-size: 12px;
+}
+
+.profile-info span {
+    display: block;
+    color: var(--muted);
+    font-size: 10px;
+    margin-top: 4px;
+}
+
+.profile-dropdown {
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    padding: 7px;
+    font-size: 11px;
+}
+
+.logout-btn {
+    background: white;
+    border: 1px solid var(--border);
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #47534c;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.logout-btn:hover {
+    border-color: var(--green);
+    color: var(--green-dark);
+}
+
+/* MAIN */
+
+.bank-main {
+    max-width: 1190px;
+    margin: auto;
+    padding: 38px 25px 50px;
+}
+
+.greeting-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 26px;
+}
+
+.greeting-date,
+.section-eyebrow {
+    font-size: 9px;
+    letter-spacing: 1.2px;
+    font-weight: 800;
+    color: var(--green-dark);
+}
+
+.greeting-section h1 {
+    font-size: 27px;
+    margin-top: 9px;
+    font-weight: 800;
+    letter-spacing: -.8px;
+}
+
+.greeting-subtitle {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 8px;
+}
+
+.account-badge {
+    background: var(--green-light);
+    color: var(--green-dark);
+    border-radius: 30px;
+    padding: 10px 14px;
+    font-size: 9px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+/* OVERVIEW */
+
+.overview-grid {
+    display: grid;
+    grid-template-columns: 1.65fr 1fr;
+    gap: 19px;
+}
+
+.main-balance-card {
+    min-height: 220px;
+    padding: 28px;
+    border-radius: 17px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(115deg, #008e61, #00b77d);
+    box-shadow: 0 12px 28px rgba(0,155,100,.12);
+}
+
+.balance-card-top {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.balance-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.1px;
+    opacity: .85;
+}
+
+.balance-amount-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 16px;
+}
+
+.balance-amount-row h1 {
+    font-size: 37px;
+    letter-spacing: -1.5px;
+    font-weight: 800;
+}
+
+.balance-eye {
+    border: 1px solid rgba(255,255,255,.35);
+    background: rgba(255,255,255,.13);
+    color: white;
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+}
+
+.balance-card-icon {
+    background: rgba(255,255,255,.15);
+    border: 1px solid rgba(255,255,255,.2);
+    width: 47px;
+    height: 47px;
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
+    font-size: 19px;
+}
+
+.balance-divider {
+    position: relative;
+    z-index: 2;
+    height: 1px;
+    background: rgba(255,255,255,.22);
+    margin: 27px 0 18px;
+}
+
+.balance-card-bottom {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.balance-card-bottom span {
+    display: block;
+    font-size: 8px;
+    letter-spacing: 1px;
+    opacity: .75;
+}
+
+.balance-card-bottom strong {
+    display: block;
+    margin-top: 7px;
+    font-size: 11px;
+    letter-spacing: 1.2px;
+}
+
+.account-type {
+    font-size: 10px;
+    background: rgba(255,255,255,.15);
+    padding: 9px 12px;
+    border-radius: 20px;
+}
+
+.card-decoration {
+    position: absolute;
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.decoration-one {
+    width: 250px;
+    height: 250px;
+    right: -80px;
+    top: -130px;
+}
+
+.decoration-two {
+    width: 200px;
+    height: 200px;
+    right: -30px;
+    bottom: -150px;
+}
+
+/* SUMMARY */
+
+.account-summary-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 17px;
+    padding: 23px;
+}
+
+.summary-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 17px;
+}
+
+.small-label {
+    color: var(--muted);
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.summary-heading h3 {
+    font-size: 15px;
+    margin-top: 6px;
+}
+
+.summary-icon {
+    width: 37px;
+    height: 37px;
+    border-radius: 11px;
+    background: var(--green-light);
+    color: var(--green);
+    display: grid;
+    place-items: center;
+}
+
+.summary-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 0;
+    border-top: 1px solid var(--border);
+}
+
+.summary-item-icon {
+    width: 35px;
+    height: 35px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+}
+
+.income-icon {
+    background: #e8f8ef;
+    color: #00a66e;
+}
+
+.expense-icon {
+    background: #fff0ee;
+    color: #e36b60;
+}
+
+.summary-item-info span {
+    display: block;
+    font-size: 10px;
+    color: var(--muted);
+}
+
+.summary-item-info strong {
+    display: block;
+    margin-top: 4px;
+    font-size: 13px;
+}
+
+.summary-footer {
+    border-top: 1px solid var(--border);
+    padding-top: 13px;
+    color: var(--muted);
+    font-size: 9px;
+}
+
+.summary-footer i {
+    color: var(--green);
+    margin-right: 5px;
+}
+
+/* QUICK ACTIONS */
+
+.quick-section {
+    margin-top: 38px;
+}
+
+.section-title h2 {
+    font-size: 18px;
+    margin-top: 7px;
+}
+
+.quick-action-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 19px;
+}
+
+.quick-action {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px 12px;
+    cursor: pointer;
+    text-align: center;
+    transition: .25s;
+}
+
+.quick-action:hover {
+    transform: translateY(-4px);
+    border-color: #a9e5ca;
+    box-shadow: 0 10px 25px rgba(0,120,75,.06);
+}
+
+.quick-icon {
+    width: 48px;
+    height: 48px;
+    margin: 0 auto 13px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 17px;
+}
+
+.send-icon,
+.cashin-icon,
+.history-icon {
+    background: #e7f8ef;
+    color: #009c67;
+}
+
+.cashout-icon {
+    background: #fff0ec;
+    color: #e16e57;
+}
+
+.quick-action strong {
+    display: block;
+    font-size: 12px;
+}
+
+.quick-action span {
+    display: block;
+    color: var(--muted);
+    font-size: 9px;
+    margin-top: 6px;
+}
+
+/* LOWER GRID */
+
+.lower-grid {
+    display: grid;
+    grid-template-columns: 1.65fr 1fr;
+    gap: 19px;
+    margin-top: 30px;
+    align-items: start;
+}
+
+.transactions-card,
+.details-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 23px;
+}
+
+.transactions-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.transactions-heading h2 {
+    font-size: 17px;
+    margin-top: 7px;
+}
+
+.view-all-btn {
+    background: transparent;
+    border: none;
+    color: var(--green-dark);
+    font-size: 10px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.view-all-btn i {
+    margin-left: 5px;
+}
+
+.transaction-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 15px 0;
+    border-top: 1px solid var(--border);
+}
+
+.transaction-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.transaction-icon {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    background: var(--green-light);
+    color: var(--green);
+    border-radius: 12px;
+    font-size: 15px;
+}
+
+.transaction-name {
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.transaction-date {
+    color: var(--muted);
+    font-size: 9px;
+    margin-top: 5px;
+}
+
+.transaction-amount {
+    font-size: 11px;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.positive {
+    color: var(--green-dark);
+}
+
+.negative {
+    color: #d95c52;
+}
+
+.empty-transactions {
+    text-align: center;
+    padding: 30px 0;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+/* DETAILS */
+
+.details-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 21px;
+}
+
+.details-heading h2 {
+    font-size: 15px;
+}
+
+.details-heading i {
+    color: var(--muted);
+}
+
+.details-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.large-avatar {
+    width: 48px;
+    height: 48px;
+    font-size: 13px;
+}
+
+.details-profile h3 {
+    font-size: 12px;
+}
+
+.details-profile p {
+    font-size: 9px;
+    color: var(--muted);
+    margin-top: 5px;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.detail-row span {
+    font-size: 9px;
+    color: var(--muted);
+}
+
+.detail-row strong {
+    font-size: 9px;
+    text-align: right;
+}
+
+.status-active {
+    color: var(--green-dark);
+}
+
+.details-notice {
+    margin-top: 18px;
+    display: flex;
+    gap: 10px;
+    padding: 12px;
+    background: #f2f9f5;
+    border-radius: 9px;
+    color: var(--green-dark);
+}
+
+.details-notice i {
+    font-size: 12px;
+}
+
+.details-notice p {
+    font-size: 9px;
+    line-height: 1.6;
+}
+
+/* BOTTOM NOTICE */
+
+.bottom-notice {
+    margin-top: 25px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 15px;
+    border-radius: 10px;
+    background: #edf7f1;
+    color: #557467;
+    font-size: 10px;
+}
+
+.bottom-notice i {
+    color: var(--green);
+}
+
+/* FOOTER */
+
+.bank-footer {
+    background: white;
+    border-top: 1px solid var(--border);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    color: var(--muted);
+    font-size: 9px;
+}
+
+/* MODALS */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(12,30,20,.55);
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal.active {
+    display: flex;
+    animation: fadeIn .2s ease;
+}
+
+.modal-card {
+    background: white;
+    width: 100%;
+    max-width: 410px;
+    border-radius: 17px;
+    padding: 30px;
+    position: relative;
+    animation: slideUp .25s ease;
+}
+
+.modal-card h2 {
+    font-size: 22px;
+    margin: 14px 0 8px;
+}
+
+.modal-card p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.modal-heading-icon {
+    width: 44px;
+    height: 44px;
+    background: var(--green-light);
+    color: var(--green);
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    font-size: 18px;
+}
+
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    border: none;
+    background: transparent;
+    font-size: 27px;
+    color: var(--muted);
+    cursor: pointer;
+}
+
+.modal-card .primary-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+/* TOAST */
+
+.toast {
+    position: fixed;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: #17231e;
+    color: white;
+    padding: 14px 22px;
+    border-radius: 9px;
+    font-size: 11px;
+    opacity: 0;
+    transition: .3s;
+    z-index: 200;
+    text-align: center;
+    max-width: 90%;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+
+    .overview-grid,
+    .lower-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .account-summary-card {
+        min-height: auto;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .bank-header {
+        height: 65px;
+    }
+
+    .header-inner {
+        padding: 0 15px;
+    }
+
+    .header-right {
+        gap: 8px;
+    }
+
+    .profile-info,
+    .profile-dropdown {
+        display: none;
+    }
+
+    .logout-btn {
+        padding: 9px;
+        font-size: 10px;
+    }
+
+    .logout-btn span {
+        display: none;
+    }
+
+    .bank-main {
+        padding: 27px 15px 35px;
+    }
+
+    .greeting-section {
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .greeting-section h1 {
+        font-size: 21px;
+    }
+
+    .greeting-subtitle {
+        max-width: 260px;
+        line-height: 1.6;
+    }
+
+    .account-badge {
+        font-size: 7px;
+        padding: 8px;
+        white-space: nowrap;
+    }
+
+    .main-balance-card {
+        min-height: 200px;
+        padding: 23px;
+    }
+
+    .balance-amount-row h1 {
+        font-size: 29px;
+    }
+
+    .balance-card-icon {
+        width: 39px;
+        height: 39px;
+    }
+
+    .quick-action-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 11px;
+    }
+
+    .quick-action {
+        padding: 19px 8px;
+    }
+
+    .transactions-card,
+    .details-card {
+        padding: 18px;
+    }
+
+    .bank-footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+}
+
+@media (max-width: 370px) {
+
+    .balance-amount-row h1 {
+        font-size: 25px;
+    }
+
+    .balance-card {
+        padding: 18px;
+    }
+
+    .account-type {
+        font-size: 8px;
+    }
+
+    .greeting-section h1 {
+        font-size: 18px;
+    }
+}

@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MyBank | Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body class="dashboard-page">
+
+    <!-- PROTOTYPE NOTICE -->
+    <div class="demo-banner">
+        <i class="fa-solid fa-circle-info"></i>
+        FASTEST BANKING IN ASIA
+    </div>
+
+
+    <!-- HEADER -->
+    <header class="bank-header">
+
+        <div class="header-inner">
+
+            <a href="dashboard.html" class="bank-logo">
+
+                <div class="logo-symbol">M</div>
+
+                <div class="logo-text">
+                    <h2>MariBank</h2>
+                    <span>DIGITAL BANKING</span>
+                </div>
+
+            </a>
+
+
+            <div class="header-right">
+
+                <button class="header-icon" onclick="showToast('No new notifications.')">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="notification-dot"></span>
+                </button>
+
+
+                <div class="profile-area">
+
+                    <div class="profile-avatar">JM</div>
+
+                    <div class="profile-info">
+                        <strong>Julius Garcia Marzan</strong>
+                        <span>Personal Account</span>
+                    </div>
+
+                    <button class="profile-dropdown" onclick="showToast('Profile settings are unavailable in this prototype.')">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+
+                </div>
+
+
+                <button class="logout-btn" onclick="logout()">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    <span>Log out</span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="bank-main">
+
+
+        <!-- GREETING -->
+        <section class="greeting-section">
+
+            <div>
+
+                <p class="greeting-date" id="currentDate">
+                    YOUR ACCOUNT OVERVIEW
+                </p>
+
+                <h1>Hello, Julius Marzan <span>👋</span></h1>
+
+                <p class="greeting-subtitle">
+                    Welcome back! Here's your account overview.
+                </p>
+
+            </div>
+
+
+            <div class="account-badge">
+                <i class="fa-solid fa-shield-halved"></i>
+                Secure your Account
+            </div>
+
+        </section>
+
+
+
+        <!-- BALANCE AND SUMMARY -->
+        <section class="overview-grid">
+
+
+            <!-- BALANCE CARD -->
+            <div class="main-balance-card">
+
+                <div class="balance-card-top">
+
+                    <div>
+
+                        <span class="balance-label">
+                            ACCOUNT BALANCE
+                        </span>
+
+                        <div class="balance-amount-row">
+
+                            <h1 id="balance">₱48,009.00</h1>
+
+                            <button
+                                class="balance-eye"
+                                id="eyeButton"
+                                onclick="toggleBalance()"
+                                aria-label="Toggle balance visibility"
+                            >
+                                <i class="fa-regular fa-eye"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="balance-card-icon">
+                        <i class="fa-solid fa-wallet"></i>
+                    </div>
+
+                </div>
+
+
+                <div class="balance-divider"></div>
+
+
+                <div class="balance-card-bottom">
+
+                    <div>
+
+                        <span>PLACEHOLDER ACCOUNT NUMBER</span>
+
+                        <strong>0000 0723 3391</strong>
+
+                    </div>
+
+
+                    <div class="account-type">
+                        <i class="fa-solid fa-circle-check"></i>
+                        Personal
+                    </div>
+
+                </div>
+
+
+                <div class="card-decoration decoration-one"></div>
+                <div class="card-decoration decoration-two"></div>
+
+            </div>
+
+
+
+            <!-- ACCOUNT SUMMARY -->
+            <div class="account-summary-card">
+
+                <div class="summary-heading">
+
+                    <div>
+                        <span class="small-label">ACCOUNT SUMMARY</span>
+                        <h3>Your finances</h3>
+                    </div>
+
+                    <div class="summary-icon">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
+
+                </div>
+
+
+                <div class="summary-item">
+
+                    <div class="summary-item-icon income-icon">
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </div>
+
+                    <div class="summary-item-info">
+                        <span>Money Added</span>
+                        <strong id="totalIncome">₱7,000.00</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="summary-item">
+
+                    <div class="summary-item-icon expense-icon">
+                        <i class="fa-solid fa-arrow-up"></i>
+                    </div>
+
+                    <div class="summary-item-info">
+                        <span>Money Spent</span>
+                        <strong id="totalExpenses">₱850.00</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="summary-footer">
+                    <i class="fa-solid fa-circle-info"></i>
+                    Illustrative figures only
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- QUICK ACTIONS -->
+        <section class="quick-section">
+
+            <div class="section-title">
+
+                <div>
+                    <span class="section-eyebrow">MANAGE YOUR ACCOUNT</span>
+                    <h2>What would you like to do?</h2>
+                </div>
+
+            </div>
+
+
+            <div class="quick-action-grid">
+
+
+                <button class="quick-action" onclick="openModal('sendModal')">
+
+                    <div class="quick-icon send-icon">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </div>
+
+                    <strong>Send Money</strong>
+
+                    <span>Transfer simulation</span>
+
+                </button>
+
+
+
+                <button class="quick-action" onclick="openModal('cashInModal')">
+
+                    <div class="quick-icon cashin-icon">
+                        <i class="fa-solid fa-plus"></i>
+                    </div>
+
+                    <strong>Cash In</strong>
+
+                    <span>Add funds</span>
+
+                </button>
+
+
+
+                <button class="quick-action" onclick="openModal('cashOutModal')">
+
+                    <div class="quick-icon cashout-icon">
+                        <i class="fa-solid fa-arrow-down"></i>
+                    </div>
+
+                    <strong>Cash Out</strong>
+
+                    <span>Withdrawal</span>
+
+                </button>
+
+
+
+                <button class="quick-action" onclick="showTransactions()">
+
+                    <div class="quick-icon history-icon">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                    </div>
+
+                    <strong>Transactions</strong>
+
+                    <span>View account activity</span>
+
+                </button>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- LOWER CONTENT -->
+        <section class="lower-grid">
+
+
+            <!-- TRANSACTIONS -->
+            <div class="transactions-card" id="transactions">
+
+                <div class="transactions-heading">
+
+                    <div>
+                        <span class="section-eyebrow">ACCOUNT ACTIVITY</span>
+                        <h2>Recent transactions</h2>
+                    </div>
+
+
+                    <button class="view-all-btn" onclick="showTransactions()">
+                        View all
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+
+                <div class="transaction-list" id="transactionList"></div>
+
+            </div>
+
+
+
+            <!-- ACCOUNT DETAILS -->
+            <aside class="details-card">
+
+                <div class="details-heading">
+
+                    <h2>Account details</h2>
+
+                    <i class="fa-solid fa-ellipsis"></i>
+
+                </div>
+
+
+                <div class="details-profile">
+
+                    <div class="large-avatar">JM</div>
+
+                    <div>
+                        <h3>Julius Garcia Marzan</h3>
+                        <p>MyBank Personal Account</p>
+                    </div>
+
+                </div>
+
+
+                <div class="detail-row">
+
+                    <span>Account type</span>
+
+                    <strong>Personal</strong>
+
+                </div>
+
+
+                <div class="detail-row">
+
+                    <span>Account number</span>
+
+                    <strong>0000 0723 3391</strong>
+
+                </div>
+
+
+                <div class="detail-row">
+
+                    <span>Account status</span>
+
+                    <strong class="status-active">
+                        Active
+                    </strong>
+
+                </div>
+
+
+                <div class="details-notice">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <p>
+                        This is Real banking services.
+                    </p>
+
+                </div>
+
+            </aside>
+
+
+        </section>
+
+
+
+        <!-- FOOTER NOTICE -->
+        <div class="bottom-notice">
+
+            <i class="fa-solid fa-circle-info"></i>
+
+            <span>
+                MyBank is one Fastest banking in Asia.
+                All account information and transactions are Transparent.
+            </span>
+
+        </div>
+
+
+    </main>
+
+
+
+    <!-- SEND MONEY MODAL -->
+    <div class="modal" id="sendModal">
+
+        <div class="modal-card">
+
+            <button class="close-btn" onclick="closeModal('sendModal')">
+                ×
+            </button>
+
+
+            <div class="modal-heading-icon">
+                <i class="fa-solid fa-paper-plane"></i>
+            </div>
+
+
+            <h2>Send Money</h2>
+
+            <p>
+                Simulate a transfer within this prototype.
+            </p>
+
+
+            <form onsubmit="makeTransaction(event, 'send')">
+
+                <label for="recipient">
+                    Recipient name
+                </label>
+
+                <input
+                    type="text"
+                    id="recipient"
+                    placeholder="Enter recipient name"
+                    required
+                >
+
+
+                <label for="sendAmount">
+                    Amount (PHP)
+                </label>
+
+                <input
+                    type="number"
+                    id="sendAmount"
+                    min="0.01"
+                    step="0.01"
+                    placeholder="0.00"
+                    required
+                >
+
+
+                <button type="submit" class="primary-btn">
+                    Simulate Transfer
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- CASH IN MODAL -->
+    <div class="modal" id="cashInModal">
+
+        <div class="modal-card">
+
+            <button class="close-btn" onclick="closeModal('cashInModal')">
+                ×
+            </button>
+
+
+            <div class="modal-heading-icon">
+                <i class="fa-solid fa-plus"></i>
+            </div>
+
+
+            <h2>Cash In</h2>
+
+            <p>
+                Simulate adding funds to your account balance.
+            </p>
+
+
+            <form onsubmit="makeTransaction(event, 'cashin')">
+
+                <label for="cashInAmount">
+                    Amount (PHP)
+                </label>
+
+                <input
+                    type="number"
+                    id="cashInAmount"
+                    min="0.01"
+                    step="0.01"
+                    placeholder="0.00"
+                    required
+                >
+
+
+                <button type="submit" class="primary-btn">
+                    Simulate Cash In
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- CASH OUT MODAL -->
+    <div class="modal" id="cashOutModal">
+
+        <div class="modal-card">
+
+            <button class="close-btn" onclick="closeModal('cashOutModal')">
+                ×
+            </button>
+
+
+            <div class="modal-heading-icon">
+                <i class="fa-solid fa-arrow-down"></i>
+            </div>
+
+
+            <h2>Cash Out</h2>
+
+            <p>
+                Simulate withdrawing from your account balance.
+            </p>
+
+
+            <form onsubmit="makeTransaction(event, 'cashout')">
+
+                <label for="cashOutAmount">
+                    Amount (PHP)
+                </label>
+
+                <input
+                    type="number"
+                    id="cashOutAmount"
+                    min="0.01"
+                    step="0.01"
+                    placeholder="0.00"
+                    required
+                >
+
+
+                <button type="submit" class="primary-btn">
+                    Simulate Cash Out
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- TOAST -->
+    <div class="toast" id="toast"></div>
+
+
+
+    <!-- FOOTER -->
+    <footer class="bank-footer">
+
+        <p>© 2026 MariBank. Fastest Bank in Asia.</p>
+
+        <span>NOT A FINANCIAL INSTITUTION</span>
+
+    </footer>
+
+
+
+    <script src="script.js"></script>
+
+
+    <script>
+
+        const dateElement = document.getElementById("currentDate");
+
+        if (dateElement) {
+
+            dateElement.textContent =
+                new Date().toLocaleDateString("en-PH", {
+                    weekday: "long",
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric"
+                }).toUpperCase();
+
+        }
+
+    </script>
+
+
+</body>
+</html>
